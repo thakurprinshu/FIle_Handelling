@@ -5,7 +5,7 @@ import java.io.*;
 
 public class Copy {
     public static void main(String[] args) {
-        File source = new File("file1.txt"); // Reuse file1.txt created earlier
+        File source = new File("file1.txt");
         File destination = new File("copy_of_file1.txt");
 
         try (
