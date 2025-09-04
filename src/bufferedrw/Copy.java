@@ -1,12 +1,12 @@
 package bufferedrw;
 
+
 import java.io.*;
 
 public class Copy {
     public static void main(String[] args) {
-
-        File source = new File("C:\\Users\\Lenovo\\Desktop\\java\\codes\\iofiles\\source.txt");
-        File destination = new File("C:\\Users\\Lenovo\\Desktop\\java\\codes\\iofiles\\destination.txt");
+        File source = new File("file1.txt"); // Reuse file1.txt created earlier
+        File destination = new File("copy_of_file1.txt");
 
         try (
                 BufferedReader reader = new BufferedReader(new FileReader(source));
@@ -17,7 +17,8 @@ public class Copy {
                 writer.write(line);
                 writer.newLine();
             }
-            System.out.println("File copied successfully!");
+            System.out.println("File copied successfully from " + source.getName() +
+                    " to " + destination.getName());
         } catch (IOException e) {
             System.out.println("Error: " + e.getMessage());
         }
